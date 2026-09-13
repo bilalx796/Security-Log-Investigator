@@ -1,11 +1,14 @@
 """Runs the analysis workflow and presents the results."""
 
+import argparse
 import os
 
 from detector import Alert, analyze_user
 from parser import group_by_user, load_logs
 
-LOG_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "sample_logs.json")
+DEFAULT_LOG_PATH = os.path.join(
+    os.path.dirname(__file__), "..", "data", "sample_logs.json"
+)
 
 ALERT_TITLES = {
     "CRITICAL": "Potential Account Compromise",
@@ -31,8 +34,21 @@ def format_alert(alert: Alert) -> str:
     )
 
 
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Analyze security logs for suspicious authentication activity."
+    )
+    parser.add_argument(
+        "--log-file",
+        default=DEFAULT_LOG_PATH,
+        help="Path to a JSON log file (default: data/sample_logs.json)",
+    )
+    return parser.parse_args()
+
+
 def main():
-    events = load_logs(LOG_PATH)
+    args = parse_args()
+    events = load_logs(args.log_file)
     grouped = group_by_user(events)
 
     for user, user_events in grouped.items():

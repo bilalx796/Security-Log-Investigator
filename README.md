@@ -71,11 +71,23 @@ Security-Log-Investigator/
 ## Running
 
 ```bash
-python src/main.py                 # run the analyzer on sample logs
-python -m unittest discover tests  # run the test suite
+python src/main.py                             # run the analyzer on sample logs
+python src/main.py --log-file path/to/logs.json  # run against your own logs
+python -m unittest discover tests              # run the test suite
 ```
 
 No external dependencies — standard library only.
+
+## Design Decisions & Limitations
+
+This is intentionally a small, rule-based prototype rather than a production SIEM:
+
+- **Thresholds are fixed constants, not tuned.** Brute-force detection (3 failures / 60s) and the MFA/privilege time windows (600s) are reasonable starting points, not values derived from real traffic.
+- **Severity is evidence-count-based**, not weighted by indicator risk (e.g. an MFA change currently counts the same as a new IP). A weighted score would be a natural next step.
+- **In-memory, single-file processing.** There's no persistence, streaming ingestion, or handling for logs too large to fit in memory — fine for a demo, not for production log volume.
+- **No IP reputation, geolocation, or ML.** "New IP" just means "not seen before for this user," with no enrichment or impossible-travel logic.
+
+These are scoping choices for a one-day build, not oversights — see Future Improvements for the natural next steps.
 
 ## Future Improvements
 
