@@ -1,0 +1,86 @@
+[
+  {
+    "timestamp": "2026-09-12T09:41:00",
+    "user": "alice",
+    "event": "LOGIN_FAILED",
+    "ip": "10.2.4.15",
+    "device": "workstation-14"
+  },
+  {
+    "timestamp": "2026-09-12T09:41:20",
+    "user": "alice",
+    "event": "LOGIN_FAILED",
+    "ip": "10.2.4.15",
+    "device": "workstation-14"
+  },
+  {
+    "timestamp": "2026-09-12T09:41:40",
+    "user": "alice",
+    "event": "LOGIN_FAILED",
+    "ip": "10.2.4.15",
+    "device": "workstation-14"
+  },
+  {
+    "timestamp": "2026-09-12T09:44:00",
+    "user": "alice",
+    "event": "LOGIN_SUCCESS",
+    "ip": "10.2.4.15",
+    "device": "workstation-14"
+  },
+  {
+    "timestamp": "2026-09-12T09:45:00",
+    "user": "alice",
+    "event": "LOGIN_SUCCESS",
+    "ip": "185.44.10.21",
+    "device": "unknown-device"
+  },
+  {
+    "timestamp": "2026-09-12T09:47:00",
+    "user": "alice",
+    "event": "MFA_DISABLED",
+    "ip": "185.44.10.21",
+    "device": "unknown-device"
+  },
+  {
+    "timestamp": "2026-09-12T09:49:00",
+    "user": "alice",
+    "event": "ADMIN_GRANTED",
+    "ip": "185.44.10.21",
+    "device": "unknown-device"
+  },
+  {
+    "timestamp": "2026-09-12T11:02:00",
+    "user": "bob",
+    "event": "LOGIN_SUCCESS",
+    "ip": "10.2.4.20",
+    "device": "workstation-02"
+  },
+  {
+    "timestamp": "2026-09-12T13:15:00",
+    "user": "bob",
+    "event": "LOGIN_SUCCESS",
+    "ip": "10.2.4.20",
+    "device": "workstation-02"
+  },
+  {
+    "timestamp": "2026-09-12T13:20:00",
+    "user": "bob",
+    "event": "LOGOUT",
+    "ip": "10.2.4.20",
+    "device": "workstation-02"
+  },
+  {
+    "timestamp": "2026-09-12T15:30:00",
+    "user": "carol",
+    "event": "LOGIN_SUCCESS",
+    "ip": "10.2.4.40",
+    "device": "workstation-09"
+  },
+  {
+    "timestamp": "2026-09-13T08:05:00",
+    "user": "carol",
+    "event": "LOGIN_SUCCESS",
+    "ip": "203.0.113.77",
+    "device": "laptop-personal"
+  }
+]
